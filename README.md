@@ -42,9 +42,9 @@ MyTrust在DAPP启动之后提供如下一些属性，可以供用户进行DAP片
 接口定义如下两种特殊的类型，分别是address和amount，其中address是钱包地址的字符串，amount是金额的对象，其格式如下：
 ```json
 {
-    value: number,
-    currency: string,
-    issuer: string
+    "value": "number",
+    "currency": "string",
+    "issuer": "string"
 }
 ```
 
@@ -74,8 +74,8 @@ MTL.balance(function(data) {
 其中options的格式基本为
 ```json
 {
-    cursor: {},
-    limit: number
+    "cursor": {},
+    "limit": "number"
 }
 ```
 其中jingtum的cursor为{ledger: number, seq: number}，ripple的cursor为{ledger: number}，stellar的cursor为paging_token，callchain的cursor为{ledger: number}。
@@ -102,9 +102,9 @@ base和counter格式为{currency: string, issuer: address}
 提交用户的支付请求，其中options的格式如下：
 ```json
 {
-    dest: address,
-    amount: amount
-    memo: string
+    "dest": "address",
+    "amount": "amount",
+    "memo": "string"
 }
 ```
 
@@ -113,8 +113,8 @@ base和counter格式为{currency: string, issuer: address}
 用户进行资产授信，其中options的格式如下：
 ```json
 {
-    amount: amount,
-    memo: string
+    "amount": "amount",
+    "memo": "string"
 
 }
 ```
@@ -130,6 +130,6 @@ base和counter格式为{currency: string, issuer: address}
 用户进行取消挂单操作，其中options的格式如下：
 ```json
 {
-    sequence: integer
+    "sequence": "integer"
 }
 ```
