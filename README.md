@@ -8,7 +8,7 @@
 
  - DAPP开发者，只需要提供一个URL地址给MyTrust就行，就可以使用MyTrust APP里面用户钱包资产。
  - DAPP开发者不需要引以MyTrust的代码，也不需要开放任何代码给MyTrust。
- - 在DAPP加载完成之后，MyTrust钱包会在当前界面中注入DAPP SDK代码，当前DAPP需要监听window.MTL对象是否存在。当window.MTL对象存在时，即可以从中获得相应的当前钱包地址和接口等。
+ - 在DAPP加载完成之后，MyTrust钱包会在当前界面中注入DAPP SDK代码，当前DAPP需要监听`window.MTL`对象是否存在。当`window.MTL`对象存在时，即可以从中获得相应的当前钱包地址和接口等。
  - MyTrust提供测试版本的MyTrust便于用户进行自行添加、测试DAPP。
 
 
@@ -28,18 +28,26 @@ if (typeof window.MTL === 'undefined') {
 
 MyTrust在DAPP启动之后提供如下一些属性，可以供用户进行DAP片开发：
 
-1. version, 当前钱包版本号
-2. platform, 当前钱包的操作系统，ios或android
-3. system, 当前钱包的钱包体系，jingtum, ripple, stellar, callchain, stream
-4. address, 当前用户的钱包地址
-5. contracts: [{ name: '名称', address: '地址'}], 当前钱包的联系人信息
-6. locale, 当前钱包的语言设置, zh_cn
+1. `version`, 当前钱包版本号, 1.0.0
+2. `platform`, 当前钱包的操作系统，`ios`或`android`
+3. `system`, 当前钱包的钱包体系，`jingtum`, `ripple`, `stellar`, `callchain`, `stream`
+4. `address`, 当前用户的钱包地址
+5. `contracts`: [{ name: '名称', address: '地址'}], 当前钱包的联系人信息
+6. `locale`, 当前钱包的语言设置, zh_cn
 
 ## 接口
 
-接口提供异步的调用方式，返回信息格式为{success: boolean, msg: string, data: object}，其中success表示请求是否成功或者失败，msg表示请求回应的消息，data表示返回的接口。
+接口提供异步的调用方式，返回信息格式为
+```json
+{
+    "success": "boolean", 
+    "msg": "string", 
+    "data": "object"
+}
+```
+其中`success`表示请求是否成功或者失败，`msg`表示请求回应的消息，`data`表示返回的接口。
 
-接口定义如下两种特殊的类型，分别是address和amount，其中address是钱包地址的字符串，amount是金额的对象，其格式如下：
+接口定义如下两种特殊的类型，分别是`address`和`amount`，其中`address`是钱包地址的字符串，`amount`是金额的对象，其格式如下：
 ```json
 {
     "value": "number",
@@ -52,6 +60,8 @@ MyTrust在DAPP启动之后提供如下一些属性，可以供用户进行DAP片
 
 返回用户当前钱包的余额
 
+例子：
+
 ```js
 MTL.balance(function(data) {
     console.dir(data);
@@ -62,10 +72,26 @@ MTL.balance(function(data) {
 
 获取用户的当前挂单列表，返回的数据格式根据每个钱包体系的而定。
 
+例子：
+
+```js
+MTL.getOrders(function(data) {
+    console.dir(data);
+});
+```
+
 
 ### MTL.getTransaction(hash, callback)
 
 获取用户的交易记录详情，返回的数据格式根据每个钱包体系的而定。
+
+例子：
+
+```js
+MTL.getTransaction("353535BACD84B1428C48389CEF8E5B993301ABE17D5291E7C5C7410A272D5152", function(data) {
+    console.dir(data);
+});
+```
 
 
 ### MTL.getTransactions(options, callback)
@@ -78,12 +104,28 @@ MTL.balance(function(data) {
     "limit": "number"
 }
 ```
-其中jingtum的cursor为{ledger: number, seq: number}，ripple的cursor为{ledger: number}，stellar的cursor为paging_token，callchain的cursor为{ledger: number}。
+其中`jingtum`的`cursor`为{ledger: number, seq: number}，`ripple`的`cursor`为{ledger: number}，`stellar`的`cursor`为`paging_token`，`callchain`的`cursor`为{ledger: number}。
+
+例子：
+
+```js
+MTL.getTransactions({}, function(data) {
+    console.dir(data);
+});
+```
 
 
 ### MTL.getTrusts(address, callback)
 
 获取用户的授信列表
+
+例子：
+
+```js
+MTL.getTrusts('jaKwVhmbcKdaXoJ7EoyZj4qzpwErgymszQ', function(data) {
+    console.dir(data);
+});
+```
 
 
 ### MTL.getOrderbook(base, counter, callback)
@@ -91,10 +133,28 @@ MTL.balance(function(data) {
 获取base/counter交易对的账本信息
 base和counter格式为{currency: string, issuer: address}
 
+例子：
+
+```js
+MTL.getOrderbook(
+    {currency: 'SWT', issuer: ''}, 
+    {currency: 'CNY', issuer: 'jGa9J9TkqtBcUoHe2zqhVFFbgUVED6o9or'}, function(data) {
+    console.dir(data);
+});
+```
+
 
 ### MTL.isValidAddress(address, callback)
 
 提供工具类的方法，判断用户钱包地址是否有效
+
+例子：
+
+```js
+MTL.isValidAddress('jaKwVhmbcKdaXoJ7EoyZj4qzpwErgymszQ', function(data) {
+    console.dir(data);
+});
+```
 
 
 ### MTL.pay(options, callback)
@@ -108,6 +168,19 @@ base和counter格式为{currency: string, issuer: address}
 }
 ```
 
+例子：
+
+```js
+MTL.pay(
+    {
+        dest: '',
+        amount: {value: 1.0, currency: 'SWT', issuer: ''},
+        memo: 'hello'
+    }, function(data) {
+    console.dir(data);
+})
+```
+
 ### MTL.trust(options, callback)
 
 用户进行资产授信，其中options的格式如下：
@@ -119,17 +192,72 @@ base和counter格式为{currency: string, issuer: address}
 }
 ```
 
+例子：
+
+```js
+MTL.trust({
+    amount: {currency: 'CNY', issuer: 'jGa9J9TkqtBcUoHe2zqhVFFbgUVED6o9or'},
+    memo: 'trust you'
+}, function(data) {
+    console.dir(data);
+});
+```
+
 ### MTL.createOrder(options, callback)
 
 用户进行挂单操作，其中options的格式如下：
 ```json
+{
+    "type": "sell/buy",
+    "amount": "number",
+    "price": "number",
+    "base": {
+        "currency": "string",
+        "issuer": "address"
+    },
+    "counter": {
+        "currency": "string",
+        "issuer": "address"
+    },
+    "memo": "string"
+}
 ```
 
-### MTL.cancelOrder(options)
+例子：
+
+```js
+MTL.createOrder({
+    "type": "sell",
+    "amount": 100,
+    "price": 0.045,
+    "base": {
+        "currency": "SWT",
+        "issuer": ""
+    },
+    "counter": {
+        "currency": "CNY",
+        "issuer": "jGa9J9TkqtBcUoHe2zqhVFFbgUVED6o9or"
+    },
+    memo: "test"
+}, function(data) {
+    console.dir(data);
+});
+```
+
+### MTL.cancelOrder(options, callback)
 
 用户进行取消挂单操作，其中options的格式如下：
+
 ```json
 {
-    "sequence": "integer"
+    "order": "number"
 }
+```
+
+例子：
+
+```js
+MTL.cancelOrder({order: 101}, function(data) {
+    console.dir(data);
+});
 ```
