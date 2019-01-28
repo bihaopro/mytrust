@@ -56,14 +56,14 @@ MyTrust在DAPP启动之后提供如下一些属性，可以供用户进行DAP片
 }
 ```
 
-### MTL.balance(callback)
+### MTL.getBalance(callback)
 
 返回用户当前钱包的余额
 
 例子：
 
 ```js
-MTL.balance(function(data) {
+MTL.getBalance(function(data) {
     console.dir(data);
 });
 ```
