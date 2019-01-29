@@ -395,6 +395,12 @@ MTL.trust({
 ```
 返回值：
 
+字段名  | 字段值
+  ------------- | -------------
+ resultCode  | 请求状态
+ resultMessage  | 返回消息
+
+
 ```json
 {
     "resultCode":"tesSUCCESS",
