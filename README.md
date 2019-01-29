@@ -68,7 +68,7 @@ MTL.getBalance(function(data) {
 });
 ```
 
-返回值：
+返回值（数组）：
 
 1. `contacts`, 官网地址
 2. `counterparty`, 网关
