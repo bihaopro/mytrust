@@ -365,6 +365,14 @@ MTL.createOrder({
     console.dir(data);
 });
 ```
+返回值：
+
+```json
+{
+    "resultCode":"telINSUF_FUND",
+    "resultMessage":"Fund insufficient"
+}
+```
 
 ### MTL.cancelOrder(options, callback)
 
@@ -388,7 +396,7 @@ MTL.cancelOrder({order: 101}, function(data) {
 
 ```json
 {
-    "resultCode":"telINSUF_FUND",
-    "resultMessage":"Fund insufficient"
+    "resultCode":"tesSUCCESS",
+    "resultMessage":"The transaction was applied. Only final in a validated ledger"
 }
 ```
