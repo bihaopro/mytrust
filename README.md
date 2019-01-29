@@ -267,7 +267,9 @@ MTL.isValidAddress('jaKwVhmbcKdaXoJ7EoyZj4qzpwErgymszQ', function(data) {
     console.dir(data);
 });
 ```
+返回值：
 
+成功返回true
 
 ### MTL.pay(options, callback)
 
@@ -313,6 +315,14 @@ MTL.trust({
 }, function(data) {
     console.dir(data);
 });
+```
+返回值：
+
+```json
+{
+    "resultCode":"tesSUCCESS",
+    "resultMessage":"he transaction was applied. Only final in a validated ledger"
+}
 ```
 
 ### MTL.createOrder(options, callback)
