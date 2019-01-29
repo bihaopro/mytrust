@@ -193,6 +193,19 @@ MTL.getTrusts('jaKwVhmbcKdaXoJ7EoyZj4qzpwErgymszQ', function(data) {
     console.dir(data);
 });
 ```
+返回值：
+
+```json
+[
+    {
+        "currency":"HJT",
+        "issuer":"jGa9J9TkqtBcUoHe2zqhVFFbgUVED6o9or",
+        "limit":10000000000,
+        "balance":"38",
+        "result":"tesSUCCESS"
+    }
+]
+```
 
 
 ### MTL.getOrderbook(base, counter, callback)
