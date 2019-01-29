@@ -125,6 +125,21 @@ MTL.getTransaction("353535BACD84B1428C48389CEF8E5B993301ABE17D5291E7C5C7410A272D
 ```
 返回值：
 
+字段名  | 字段值
+  ------------- | -------------
+ result  | 请求状态
+ hash  | 交易hash
+ source  | 源地址
+ sequence  | orderId
+ memo  | 叙述
+ memo_type  | 叙述类型
+ time  | 时间
+ operrations  | 操作返回值
+ type  | 类型
+ source  | 源地址
+ destination  | 目标地址
+ des  | 描述
+ 
 ```json
 {
     "result":"tesSUCCESS",
