@@ -383,3 +383,12 @@ MTL.cancelOrder({order: 101}, function(data) {
     console.dir(data);
 });
 ```
+
+返回值：
+
+```json
+{
+    "resultCode":"telINSUF_FUND",
+    "resultMessage":"Fund insufficient"
+}
+```
