@@ -108,7 +108,7 @@ MTL.getTransaction("353535BACD84B1428C48389CEF8E5B993301ABE17D5291E7C5C7410A272D
     console.dir(data);
 });
 ```
-返回值（数组）：
+返回值：
 
 ```json
 {
@@ -149,6 +149,36 @@ MTL.getTransaction("353535BACD84B1428C48389CEF8E5B993301ABE17D5291E7C5C7410A272D
 MTL.getTransactions({}, function(data) {
     console.dir(data);
 });
+```
+返回值：
+
+```json
+{
+    "txs":[
+        {
+            "date":"2019-01-25T06:51:00.000Z",
+            "hash":"364BC0EDF31ACF9232274CE4C65328CB946FB89594D923C41F270015EAA4BB07",
+            "type":"payment",
+            "amount":1,
+            "currency":"SWTC",
+            "issuer":"jGa9J9TkqtBcUoHe2zqhVFFbgUVED6o9or",
+            "result":"tesSUCCESS"
+        },
+        {
+            "date":"2019-01-25T06:51:00.000Z",
+            "hash":"364BC0EDF31ACF9232274CE4C65328CB946FB89594D923C41F270015EAA4BB07",
+            "type":"payment",
+            "amount":1,
+            "currency":"SWTC",
+            "issuer":"jGa9J9TkqtBcUoHe2zqhVFFbgUVED6o9or",
+            "result":"tesSUCCESS"
+        }
+    ],
+    "cursor":{
+        "ledger":11880416,
+        "seq":2
+    }
+}
 ```
 
 
