@@ -143,11 +143,11 @@ MTL.getTransaction("353535BACD84B1428C48389CEF8E5B993301ABE17D5291E7C5C7410A272D
  result  | 请求状态
  hash  | 交易hash
  source  | 源地址
- sequence  | orderId
- memo  | 叙述
- memo_type  | 叙述类型
+ sequence  | 订单号orderId
+ memo  | 备注
+ memo_type  | 备注类型
  time  | 时间
- operrations  | 操作返回值
+ operations  | 列表
  type  | 类型
  source  | 源地址
  destination  | 目标地址
@@ -158,7 +158,7 @@ MTL.getTransaction("353535BACD84B1428C48389CEF8E5B993301ABE17D5291E7C5C7410A272D
     "result":"tesSUCCESS",
     "hash":"364BC0EDF31ACF9232274CE4C65328CB946FB89594D923C41F270015EAA4BB07",
     "source":"jB9UKTLvxsZvNSn1bJW8N96usZLmWGYu6E",
-    "operrations":[
+    "operations":[
         {
             "type":"payment",
             "source":"jB9UKTLvxsZvNSn1bJW8N96usZLmWGYu6E",
@@ -252,7 +252,7 @@ MTL.getTrusts('jaKwVhmbcKdaXoJ7EoyZj4qzpwErgymszQ', function(data) {
   ------------- | -------------
  currency  | 币种英文名
  issuer  | 网关地址
- limit  | 最大值
+ limit  | 授信额度
  balance  | 余额
  result  | 返回状态
  
@@ -404,7 +404,7 @@ MTL.trust({
 ```json
 {
     "resultCode":"tesSUCCESS",
-    "resultMessage":"he transaction was applied. Only final in a validated ledger"
+    "resultMessage":"The transaction was applied. Only final in a validated ledger"
 }
 ```
 
