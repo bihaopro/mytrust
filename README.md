@@ -182,6 +182,16 @@ MTL.getTransactions({}, function(data) {
 ```
 返回值：
 
+字段名  | 字段值
+  ------------- | -------------
+ date  | 日期
+ hash  | 交易hash
+ type  | 交易类型，payment支付
+ amount  | 数量
+ currency  | 币种英文名
+ issuer  | 网关地址
+ result  | 请求状态
+  
 ```json
 {
     "txs":[
@@ -225,6 +235,14 @@ MTL.getTrusts('jaKwVhmbcKdaXoJ7EoyZj4qzpwErgymszQ', function(data) {
 ```
 返回值：
 
+字段名  | 字段值
+  ------------- | -------------
+ currency  | 币种英文名
+ issuer  | 网关地址
+ limit  | 最大值
+ balance  | 余额
+ result  | 返回状态
+ 
 ```json
 [
     {
@@ -253,6 +271,12 @@ MTL.getOrderbook(
 });
 ```
 返回值：
+
+字段名  | 字段值
+  ------------- | -------------
+ bids  | 买单，price买单价格，amount买单数量
+ asks  | 卖单，price卖单价格，amount卖单数量
+ 
 
 ```json
 {
