@@ -88,6 +88,15 @@ MTL.getOrders(function(data) {
     console.dir(data);
 });
 ```
+返回值（数组）：
+
+1. `amount`, 数量
+2. `bugCur`, 基本币种
+3. `pairs`, 交易对
+4. `price`, 价格
+5. `sellCur`: 交易币种英文名
+6. `seq`, 单号
+6. `type`, 类型
 
 
 ### MTL.getTransaction(hash, callback)
