@@ -228,6 +228,32 @@ MTL.getOrderbook(
     console.dir(data);
 });
 ```
+返回值：
+
+```json
+{
+    "bids":[
+        {
+            "price":2,
+            "amount":"2.000000"
+        },
+        {
+            "price":1,
+            "amount":"1.000000"
+        }
+    ],
+    "asks":[
+        {
+            "price":3,
+            "amount":"3.000000"
+        },
+        {
+            "price":4,
+            "amount":"4.000000"
+        }
+    ]
+}
+```
 
 
 ### MTL.isValidAddress(address, callback)
