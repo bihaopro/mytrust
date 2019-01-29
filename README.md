@@ -108,6 +108,13 @@ MTL.getTransaction("353535BACD84B1428C48389CEF8E5B993301ABE17D5291E7C5C7410A272D
     console.dir(data);
 });
 ```
+返回值（数组）：
+
+1. `result`, 请求状态，tesSUCCESS成功
+2. `hash`, 交易hash值
+3. `source`, 源地址
+4. `operations`, :
+, `type`, 类型
 
 
 ### MTL.getTransactions(options, callback)
