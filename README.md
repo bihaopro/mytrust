@@ -90,10 +90,14 @@ MTL.getOrders(function(data) {
 ```
 返回值：
 
-表头  | 表头
+字段名  | 字段值
   ------------- | -------------
- 单元格内容  | 单元格内容
- 单元格内容l  | 单元格内容
+ type  | 类型buy买，sell卖
+ pairs  | 交易对
+ price  | 价格
+ amount  | 数量
+ seq  | orderId
+ 
 
 ```json
 [
