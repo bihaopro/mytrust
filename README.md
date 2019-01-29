@@ -67,6 +67,13 @@ MTL.getBalance(function(data) {
     console.dir(data);
 });
 ```
+返回值：（数组形式）
+1.contacts：官网地址，
+2.counterparty：网关,
+3.counterparty1：网关简写,
+4.currency：币种英文名,
+5.value：余额数量,
+6.length：数组长度
 
 ### MTL.getOrders(callback)
 
