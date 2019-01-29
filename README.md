@@ -68,14 +68,27 @@ MTL.getBalance(function(data) {
 });
 ```
 
-返回值（数组）：
+返回值：
 
-1. `contacts`, 官网地址
-2. `counterparty`, 网关
-3. `counterparty1`, 网关简写
-4. `currency`, 币种英文名
-5. `value`: 余额数量
-6. `length`, 数组长度
+字段名  | 字段值
+  ------------- | -------------
+ currency  | 币种英文名
+ value  | 余额
+ counterparty  | 网关地址
+ 
+```json
+[
+    {
+        "currency":"SWT",
+        "value":"47.49699"
+    },
+    {
+        "currency":"CNY",
+        "value":"7.49699",
+        "counterparty":"jGa9J9TkqtBcUoHe2zqhVFFbgUVED6o9or"
+    }
+]
+```
 
 ### MTL.getOrders(callback)
 
@@ -343,6 +356,22 @@ MTL.pay(
 })
 ```
 
+返回值：
+
+字段名  | 字段值
+  ------------- | -------------
+ resultCode  | 返回状态
+ resultMessage  | 返回消息
+ hash  | 交易hash
+ 
+```json
+{
+    "resultCode":"telINSUF_FUND",
+    "resultMessage":"The transaction was applied.Only final in a validated ledger",
+    "hash":"364BC0EDF31ACF9232274CE4C65328CB946FB89594D923C41F270015EAA4BB07"
+}
+```
+
 ### MTL.trust(options, callback)
 
 用户进行资产授信，其中options的格式如下：
@@ -415,6 +444,12 @@ MTL.createOrder({
 ```
 返回值：
 
+字段名  | 字段值
+  ------------- | -------------
+ resultCode  | 请求状态
+ resultMessage  | 返回消息
+ 
+
 ```json
 {
     "resultCode":"telINSUF_FUND",
@@ -441,6 +476,11 @@ MTL.cancelOrder({order: 101}, function(data) {
 ```
 
 返回值：
+
+字段名  | 字段值
+  ------------- | -------------
+ resultCode  | 请求状态
+ resultMessage  | 返回消息
 
 ```json
 {
