@@ -88,13 +88,19 @@ MTL.getOrders(function(data) {
     console.dir(data);
 });
 ```
-返回值（数组）：
+返回值：
 
-1. `amount`, 数量
-2. `pairs`, 交易对
-3. `price`, 价格
-4. `seq`, 单号
-5. `type`, 类型
+```json
+[
+    {
+        "type":"sell",
+        "pairs":"SWT/CNY:jGa9J9TkqtBcUoHe2zqhVFFbgUVED6o9or",
+        "price":1,
+        "amount":"1.000000",
+        "seq":"106"
+    }
+]
+```
 
 
 ### MTL.getTransaction(hash, callback)
