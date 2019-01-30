@@ -193,6 +193,13 @@ MTL.getTransaction("353535BACD84B1428C48389CEF8E5B993301ABE17D5291E7C5C7410A272D
 ```
 其中`jingtum`的`cursor`为{ledger: number, seq: number}，`ripple`的`cursor`为{ledger: number}，`stellar`的`cursor`为`paging_token`，`callchain`的`cursor`为{ledger: number}。
 
+参数列表：
+
+参数名  | 参数值
+  ------------- | -------------
+ cursor  | 起始位置数
+ limit  | 条数限制
+ 
 例子：
 
 ```js
@@ -246,6 +253,13 @@ MTL.getTransactions({}, function(data) {
 
 获取用户的授信列表
 
+参数列表：
+
+参数名  | 参数值
+  ------------- | -------------
+ address  | 钱包账号地址
+ callback  | 回调函数
+ 
 例子：
 
 ```js
@@ -281,6 +295,14 @@ MTL.getTrusts('jaKwVhmbcKdaXoJ7EoyZj4qzpwErgymszQ', function(data) {
 获取base/counter交易对的账本信息
 base和counter格式为{currency: string, issuer: address}
 
+参数列表：
+
+参数名  | 参数值
+  ------------- | -------------
+ base  | 基币信息，currency基币币种英文名，issuer基币币种网关
+ counter  | 交易币种信息，currency交易币种英文名，issuer交易币种网关地址
+ callback  | 回调函数
+ 
 例子：
 
 ```js
@@ -328,6 +350,13 @@ MTL.getOrderbook(
 
 提供工具类的方法，判断用户钱包地址是否有效
 
+参数列表：
+
+参数名  | 参数值
+  ------------- | -------------
+ address  | 钱包地址
+ callback  | 回调函数
+ 
 例子：
 
 ```js
@@ -350,6 +379,15 @@ MTL.isValidAddress('jaKwVhmbcKdaXoJ7EoyZj4qzpwErgymszQ', function(data) {
 }
 ```
 
+参数列表：
+
+参数名  | 参数值
+  ------------- | -------------
+ dest  | 目标地址
+ amount  | 交易信息，value个数，currency币种符号，issuer币种网关地址
+ memo  | 叙述
+ callback  | 回调函数
+ 
 例子：
 
 ```js
@@ -389,6 +427,14 @@ MTL.pay(
 
 }
 ```
+参数列表：
+
+参数名  | 参数值
+  ------------- | -------------
+ amount  | 交易信息，value个数，currency币种符号，issuer币种网关地址
+ memo  | 叙述
+ callback  | 回调函数
+ 
 
 例子：
 
@@ -434,7 +480,18 @@ MTL.trust({
     "memo": "string"
 }
 ```
+参数列表：
 
+参数名  | 参数值
+  ------------- | -------------
+ type  | 类型，buy买，sell卖
+ amount  | 数量
+ price  | 价格
+ base  | 基币信息，currency币种符号，issuer网关地址
+ counter  | 交易币信息，currency币种符号，issuer网关地址
+ memo  | 叙述
+ callback  | 回调函数
+ 
 例子：
 
 ```js
@@ -479,6 +536,13 @@ MTL.createOrder({
     "order": "number"
 }
 ```
+参数列表：
+
+参数名  | 参数值
+  ------------- | -------------
+ order  | 挂单时产生的订单号
+ callback  | 回调函数
+ 
 
 例子：
 
