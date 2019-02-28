@@ -11,6 +11,10 @@
  - 在DAPP加载完成之后，MyTrust钱包会在当前界面中注入DAPP SDK代码，当前DAPP需要监听`window.MTL`对象是否存在。当`window.MTL`对象存在时，即可以从中获得相应的当前钱包地址和接口等。
  - MyTrust提供测试版本的MyTrust便于用户进行自行添加、测试DAPP。
 
+## DAPP开发参考案例
+
+以下是DAPP的官方完整示例，可以参考开发
+示例：[https://trust.halobtc.com/dapp](https://trust.halobtc.com/dapp)
 
 ## 使用
 
