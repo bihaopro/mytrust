@@ -14,7 +14,7 @@
 ## DAPP开发参考案例
 
 以下是DAPP的官方完整示例，可以参考开发
-示例：[https://trust.halobtc.com/dapp](https://trust.halobtc.com/dapp)
+示例：[https://trust.coinpany.cn/dapp](https://trust.coinpany.cn/dapp)
 
 ## 使用
 
