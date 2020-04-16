@@ -1,15 +1,15 @@
-# MyTrust DAPP接口
+# Mytrust DAPP接口
 
 ## 概述
 
-欢迎使用MyTrust DAPP接口，MyTrust提供SWTC、Ripple、Stellar、Callchain、Stream的钱包DAPP服务。MyTrust开放了第三方DAPP接口，让开放者可以开发自己的DAPP，为用户提供更多的DAPP构建能力。
+欢迎使用Mytrust DAPP接口，Mytrust提供SWTC、Ripple、Stellar、Callchain、Stream的钱包DAPP服务。Mytrust开放了第三方DAPP接口，让开放者可以开发自己的DAPP，为用户提供更多的DAPP构建能力。
 
 ## DAPP开发流程
 
- - DAPP开发者，只需要提供一个URL地址给MyTrust就行，就可以使用MyTrust APP里面用户钱包资产。
- - DAPP开发者不需要引以MyTrust的代码，也不需要开放任何代码给MyTrust。
- - 在DAPP加载完成之后，MyTrust钱包会在当前界面中注入DAPP SDK代码，当前DAPP需要监听`window.MTL`对象是否存在。当`window.MTL`对象存在时，即可以从中获得相应的当前钱包地址和接口等。
- - MyTrust提供测试版本的MyTrust便于用户进行自行添加、测试DAPP。
+ - DAPP开发者，只需要提供一个URL地址给Mytrust就行，就可以使用Mytrust APP里面用户钱包资产。
+ - DAPP开发者不需要引以Mytrust的代码，也不需要开放任何代码给Mytrust。
+ - 在DAPP加载完成之后，Mytrust钱包会在当前界面中注入DAPP SDK代码，当前DAPP需要监听`window.MTL`对象是否存在。当`window.MTL`对象存在时，即可以从中获得相应的当前钱包地址和接口等。
+ - Mytrust提供测试版本的Mytrust便于用户进行自行添加、测试DAPP。
 
 ## DAPP开发参考案例
 
@@ -18,11 +18,11 @@
 
 ## 使用
 
-在使用MyTrust DAPP接口的第一步是判断在浏览器中是否已经存在了MyTrust DAPP接口，可以通过如下方式进行检测
+在使用Mytrust DAPP接口的第一步是判断在浏览器中是否已经存在了Mytrust DAPP接口，可以通过如下方式进行检测
 
 ```js
 if (typeof window.MTL === 'undefined') {
-    alert('请在MyTrust APP中打开DAPP');
+    alert('请在Mytrust APP中打开DAPP');
 } else {
     // TODO 业务处理
 }
@@ -30,7 +30,7 @@ if (typeof window.MTL === 'undefined') {
 
 ## 属性
 
-MyTrust在DAPP启动之后提供如下一些属性，可以供用户进行DAP片开发：
+Mytrust在DAPP启动之后提供如下一些属性，可以供用户进行DAP片开发：
 
 1. `version`, 当前钱包版本号, 1.0.0
 2. `platform`, 当前钱包的操作系统，`ios`或`android`
